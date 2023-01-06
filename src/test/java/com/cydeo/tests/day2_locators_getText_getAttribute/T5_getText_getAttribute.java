@@ -19,10 +19,11 @@ public class T5_getText_getAttribute {
         driver.get("https://practice.cydeo.com/registration_form");
 
         //3- Verify header text is as expected:
-        WebElement headerText = driver.findElement(By.tagName("h2"));
+        WebElement headerText= driver.findElement(By.tagName("h2"));
         //Expected: Registration form
-        String expectedHeaderText = "Registration form";
-        String actualHeaderText = headerText.getText(); // will return "Registration form" as String
+        String expectedHeaderText= "Registration form";
+        String actualHeaderText =headerText.getText();
+
 
         if (actualHeaderText.equals(expectedHeaderText)){
             System.out.println("Header text verification PASSED!");
@@ -33,21 +34,21 @@ public class T5_getText_getAttribute {
         //4- Locate “First name” input box
         // we are locating the web element using "name" locator
         // name attribute has "firstname" value
-        //WebElement firstNameInput = driver.findElement(By.name("firstname"));
-        WebElement firstNameInput = driver.findElement(By.className("form-control"));
+        WebElement firstNameInput = driver.findElement(By.name("firstname"));
+
 
         //5- Verify placeholder attribute’s value is as expected:
         // Expected: first name
         String expectedPlaceHolder = "first name";
-        String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
+        String actualPlaceHolder= firstNameInput.getAttribute("placeholder");
 
         if (actualPlaceHolder.equals(expectedPlaceHolder)){
-            System.out.println("Placeholder text verification PASSED!");
-        }else{
-            System.out.println("Placeholder text verification FAILED!!!");
-        }
+           System.out.println("Placeholder text verification PASSED!");
+       }else{
+           System.out.println("Placeholder text verification FAILED!!!");
+       }
 
-        driver.close();
+       driver.close();
 
     }
 
