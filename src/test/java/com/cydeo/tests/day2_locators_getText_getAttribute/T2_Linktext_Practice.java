@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T2_Linktext_Practice {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //TC #3: Back and forth navigation
         //1- Open a Chrome browser
@@ -20,38 +20,45 @@ public class T2_Linktext_Practice {
         driver.get("https://practice.cydeo.com");
 
         //3- Click to A/B Testing from top of the list.
-        //Thread.sleep(2000);
         //driver.findElement(By.linkText("A/B Testing")).click();
+        //Thread.sleep(2000);
         WebElement abTestLink = driver.findElement(By.linkText("A/B Testing"));
         abTestLink.click();
+
 
         //4- Verify title is:
         //Expected: No A/B Test
         String expectedTitle = "No A/B Test";
         String actualTitle = driver.getTitle();
 
-        if (actualTitle.equals(expectedTitle)){
+        if (expectedTitle.equals(actualTitle)){
             System.out.println("Title verification PASS!");
-        }else{
+        } else {
             System.out.println("Title verification FAILED!!!");
         }
+
+
 
         //5- Go back to home page by using the .back();
         driver.navigate().back();
 
+
         //6- Verify title equals:
         //Expected: Practice
-        expectedTitle= "Practice";
-        actualTitle = driver.getTitle();
+        String expectedTitle2 = "Practice";
+        String actualTitle2 = driver.getTitle();
 
-        if (actualTitle.equals(expectedTitle)){
-            System.out.println("Title verification PASSED!");
-        }else{
+        if (expectedTitle2.equals(actualTitle2)){
+            System.out.println("Title verification PASS!");
+        } else {
             System.out.println("Title verification FAILED!!!");
         }
 
+
         //BREAK UNTIL 1.01PM CST
         //BREAK UNTIL 2.01PM EST
+
+        driver.close();
 
 
     }

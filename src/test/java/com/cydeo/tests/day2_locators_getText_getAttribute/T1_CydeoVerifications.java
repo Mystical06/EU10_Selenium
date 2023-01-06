@@ -15,8 +15,9 @@ public class T1_CydeoVerifications {
 
         //TC #1: Cydeo practice tool verifications
         //1. Open Chrome browser
+
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
 
         //2. Go to https://practice.cydeo.com
@@ -24,27 +25,18 @@ public class T1_CydeoVerifications {
 
         //3. Verify URL contains
         //Expected: cydeo
-        String expectedURL = "cydeo";
-        String actualURL = driver.getCurrentUrl();
 
-        if (actualURL.contains(expectedURL)){
-            System.out.println("URL verification PASSED!");
-        }else{
-            System.out.println("URL verification FAILED!!!");
-        }
+        System.out.println(driver.getCurrentUrl().contains("cydeo"));
+
 
         // 4. Verify title:
         //Expected: Practice
-        String expectedTitle = "Practice";
-        String actualTitle = driver.getTitle();
-
-        if (actualTitle.equals(expectedTitle)){
-            System.out.println("Title verification PASSED!");
-        }else{
-            System.out.println("Title verification FAILED!!!");
-        }
+        System.out.println(driver.getTitle().equals("Practice"));
 
         driver.close();
+
+
+
 
         //break 15mins: 10.10am cST
         //break 15mins: 11.10am EST

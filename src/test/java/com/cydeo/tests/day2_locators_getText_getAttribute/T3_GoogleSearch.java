@@ -6,6 +6,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class T3_GoogleSearch {
 
@@ -18,22 +20,34 @@ public class T3_GoogleSearch {
 
         //2- Go to: https://google.com
         driver.get("https://www.google.com");
+        driver.findElement(By.cssSelector("div[class='QS5gu sy4vM']")).click();
 
         //3- Write “apple” in search box
         //4- PRESS ENTER using Keys.ENTER
-        WebElement googleSearchBox = driver.findElement(By.name("q"));
+        WebElement googleSearchBox= driver.findElement(By.name("q"));
         googleSearchBox.sendKeys("apple" + Keys.ENTER);
+
 
         //5- Verify title:
         //Expected: Title should start with “apple” word
-        String expectedInTitle = "apple";
-        String actualTitle = driver.getTitle();
 
-        if (actualTitle.startsWith(expectedInTitle)){
+        String expectedInTitle = "apple";
+        String actualInTitle = driver.getTitle();
+
+        if (actualInTitle.startsWith(expectedInTitle)){
             System.out.println("Title verification PASSED!");
-        }else{
+        }else {
             System.out.println("Title verification FAILED!!!");
         }
+
+        driver.close();
+
+
+
+
+
+
+
 
 
 
