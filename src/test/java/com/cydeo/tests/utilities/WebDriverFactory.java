@@ -9,28 +9,29 @@ package com.cydeo.tests.utilities;
 //   - if "firefox" passed --> it will open firefox browser
 // RETURN TYPE: "WebDriver"
 
-import io.github.bonigarcia.wdm.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
-import org.openqa.selenium.firefox.*;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
-    public static WebDriver getDriver(String browserType){
+    public static WebDriver getDriver (String browserType) {
 
-        if (browserType.equalsIgnoreCase("chrome")){
+        if (browserType.equalsIgnoreCase("chrome")) {
 
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
-
-        }else if (browserType.equalsIgnoreCase("firefox")){
+        } else if (browserType.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
-        }else{
+
+        }else {
             System.out.println("Given browser type does not exist/or is not currently supported");
-            System.out.println("Driver = null");
             return null;
         }
+
 
 
     }

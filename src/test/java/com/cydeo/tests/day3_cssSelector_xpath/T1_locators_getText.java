@@ -1,7 +1,9 @@
 package com.cydeo.tests.day3_cssSelector_xpath;
 
 import com.cydeo.tests.utilities.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T1_locators_getText {
 
@@ -10,41 +12,43 @@ public class T1_locators_getText {
         //1- Open a Chrome browser
         //WebDriverManager.chromedriver().setup();
         //WebDriver driver = new ChromeDriver();
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+       WebDriver driver = WebDriverFactory.getDriver("chrome");
+       driver.manage().window().maximize();
 
-        driver.manage().window().maximize();
-
-        //2- Go to: https://login1.nextbasecrm.com/
-        driver.get("https://login1.nextbasecrm.com/");
+       //2- Go to https://login1.nextbasecrm.com
+        driver.get("https://login1.nextbasecrm.com");
 
         //3- Enter incorrect username: “incorrect”
-        //driver.findElement(By.className("login-inp")).sendKeys("incorrect");
-        WebElement inputUsername = driver.findElement(By.className("login-inp"));
-        inputUsername.sendKeys("incorrect");
+        WebElement userLogin = driver.findElement(By.name("USER_LOGIN"));
+        userLogin.sendKeys("incorrect");
+
 
         //4- Enter incorrect password: “incorrect”
+        WebElement userPassword = driver.findElement(By.name("USER_PASSWORD"));
+        userPassword.sendKeys("incorrect");
         //To auto generate local variable
         //Mac: option + enter
         //Windows: alt + enter
-        WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
-        inputPassword.sendKeys("incorrect");
+
 
         //5- Click to log in button.
-        WebElement loginButton = driver.findElement(By.className("login-btn"));
-        loginButton.click();
+        driver.findElement(By.className("login-btn")).click();
 
         //6- Verify error message text is as expected:
         //Expected: Incorrect login or password
-        WebElement errorMessage = driver.findElement(By.className("errortext"));
 
-        String expectedErrorMessage = "Incorrect login or password";
-        String actualErrorMessage = errorMessage.getText();
+        String expectedText="Incorrect login or password";
+        String actualText= driver.findElement(By.className("errortext")).getText();
 
-        if (actualErrorMessage.equals(expectedErrorMessage)){
-            System.out.println("Error message verification PASSED!");
-        }else{
-            System.out.println("Error message verification FAILED!!!");
+        if (expectedText.equals(actualText)){
+            System.out.println("Testing PASSED!");
+        }else {
+            System.out.println("Testing FAILED!!!");
         }
+
+        driver.close();
+
+
 
     }
 
