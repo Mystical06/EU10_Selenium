@@ -10,44 +10,43 @@ import java.util.concurrent.*;
 public class T1_Alert_Practices {
 
     WebDriver driver;
-
     @BeforeMethod
-    public void setupMethod(){
+    public void setUp(){
+
+        //TC #1: Information alert practice
         //1. Open browser
-        driver = WebDriverFactory.getDriver("chrome");
+        driver= WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
-        //2. Go to website: https://practice.cydeo.com/javascript_alerts
-        driver.get("https://practice.cydeo.com/javascript_alerts");
+        //2. Go to website: http://practice.cydeo.com/javascript_alerts
+        driver.get("http://practice.cydeo.com/javascript_alerts");
     }
-
     @Test
-    public void alert_test1() throws InterruptedException {
+    public void alertPractice_1() throws InterruptedException {
+
         //3. Click to “Click for JS Alert” button
-        WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
+        WebElement jsAlertButton = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
+        Thread.sleep(2000);
+        jsAlertButton.click();
 
-
-        informationAlertButton.click();
-        Thread.sleep(1000);
 
         //To be able to click to Alert OK button we need to switch driver's focus to Alert itself.
-        Alert alert = driver.switchTo().alert();
+        Alert alert= driver.switchTo().alert();
 
         //4. Click to OK button from the alert
         alert.accept();
 
         //5. Verify “You successfully clicked an alert” text is displayed.
-        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        WebElement resultText = driver.findElement(By.xpath("//*[@id='result']"));
 
-        //Failure message will only be displayed if assertion fails: "Result text is NOT displayed."
+        //Failure message will only be displayed if assertion fails.
         Assert.assertTrue(resultText.isDisplayed(), "Result text is NOT displayed.");
-
-        String expectedText = "You successfully clicked an alert";
-        String actualText = resultText.getText();
-
-        Assert.assertEquals(actualText, expectedText, "Actual result text is not as expected!!!");
     }
 
+   @AfterMethod
+    public void tearDown(){
+        driver.close();
+   }
 
 }

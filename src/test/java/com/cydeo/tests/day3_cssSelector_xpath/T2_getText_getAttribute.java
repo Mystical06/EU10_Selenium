@@ -16,48 +16,47 @@ public class T2_getText_getAttribute {
 
         //3- Verify “remember me” label text is as expected:
         //Expected: Remember me on this computer
-        WebElement rememberMeLabel = driver.findElement(By.className("login-item-checkbox-label"));
 
-        String expectedRememberMeLabel= "Remember me on this computer";
-        String actualRememberMeLabel = rememberMeLabel.getText();
+        WebElement rememberMeText = driver.findElement(By.className("login-item-checkbox-label"));
+        String actualText = rememberMeText.getText();
+        String expectedText= "Remember me on this computer";
 
-        if (actualRememberMeLabel.equals(expectedRememberMeLabel)){
-            System.out.println("Label verification PASSED!");
-        }else{
-            System.out.println("Label verification FAILED!!!");
+        if (actualText.equals(expectedText)) {
+            System.out.println("Remember Me text test PASSED!");
+        } else {
+            System.out.println("Remember Me text test FAILED!!!");
         }
 
         //4- Verify “forgot password” link text is as expected:
         //Expected: Forgot your password?
-        WebElement forgotPasswordLink = driver.findElement(By.className("login-link-forgot-pass"));
 
-        String expectedForgotPasswordLinkText = "FORGOT YOUR PASSWORD?";
-        String actualForgotPasswordLinkText = forgotPasswordLink.getText();
+        WebElement forgotPasswordText = driver.findElement(By.className("login-link-forgot-pass"));
+        String actualForgotText= forgotPasswordText.getText();
+        System.out.println(actualForgotText);
+        String expectedForgotText= "Forgot your password?";
 
-        if (actualForgotPasswordLinkText.equals(expectedForgotPasswordLinkText)){
-            System.out.println("Forgot password link verification PASSED!");
+        if (actualForgotText.equals(expectedForgotText)){
+            System.out.println("Forgot your password text test PASSED!");
         }else {
-            System.out.println("actualForgotPasswordLinkText = " + actualForgotPasswordLinkText);
-            System.out.println("expectedForgotPasswordLinkText = " + expectedForgotPasswordLinkText);
-
-            System.out.println("Forgot password link verification FAILED!!!");
+            System.out.println("Forgot your password text test FAILED!!!");
         }
 
 
         //5- Verify “forgot password” href attribute’s value contains expected:
         //Expected: forgot_password=yes
-        String expectedInHref = "forgot_password=yes";
-        String actualHrefAttributeValue = forgotPasswordLink.getAttribute("href");
 
-        System.out.println("actualHrefAttributeValue = " + actualHrefAttributeValue);
+        String expectedInHref= "forgot_password=yes";
+        String actualInHref= forgotPasswordText.getAttribute("href");
 
-        if (actualHrefAttributeValue.contains(expectedInHref)){
+        System.out.println("actualInHref = " + actualInHref);
+
+        if (actualInHref.contains(expectedInHref)){
             System.out.println("HREF attribute value verification PASSED!");
-        }else{
-            System.out.println("HREF attribute value verification FAILED!!!");
+        }else {
+            System.out.println("REF attribute value verification FAILED!!!");
         }
 
-
+        driver.close();
 
     }
 

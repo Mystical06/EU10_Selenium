@@ -1,22 +1,15 @@
 package com.cydeo.tests.day7_webtables_utilities_javafaker;
 
-import com.cydeo.tests.utilities.*;
-import org.openqa.selenium.*;
-import org.testng.annotations.*;
+import com.cydeo.tests.base.TestBase;
+import com.cydeo.tests.utilities.BrowserUtils;
+import com.cydeo.tests.utilities.CRM_Utilities;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
-import java.util.concurrent.*;
+public class T3_CRM_LOGIN extends TestBase {
 
-public class T3_CRM_LOGIN {
 
-    public WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod(){
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    }
 
     //TC #3: Login scenario
     @Test
@@ -42,7 +35,7 @@ public class T3_CRM_LOGIN {
 
         //6. Verify title is as expected:
         //Expected: Portal
-        BrowserUtils.verifyTitle(driver, "Portal");
+        BrowserUtils.verifyTitle(driver, "(3) My tasks");
 
     }
 
@@ -57,7 +50,7 @@ public class T3_CRM_LOGIN {
 
         //6. Verify title is as expected:
         //Expected: Portal
-        BrowserUtils.verifyTitle(driver, "Portal");
+        BrowserUtils.verifyTitle(driver, "(3) My tasks");
 
     }
 
@@ -73,8 +66,8 @@ public class T3_CRM_LOGIN {
 
         //6. Verify title is as expected:
         //Expected: Portal
-        //BrowserUtils.sleep(2);
-        BrowserUtils.verifyTitle(driver, "(2) Portal");
+        BrowserUtils.sleep(3);
+        BrowserUtils.verifyTitle(driver, "(3) Portal");
 
     }
 

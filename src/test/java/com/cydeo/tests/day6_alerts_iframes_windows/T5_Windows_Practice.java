@@ -51,12 +51,13 @@ public class T5_Windows_Practice {
         // window handle 1 - main window
         // window handle 2 - 2nd window
 
-        for(String each: allWindowHandles){
-
+        for (String each : allWindowHandles) {
             driver.switchTo().window(each);
             System.out.println("Current title while switching windows: " + driver.getTitle());
 
         }
+
+
 
         //7. Assert: Title is “New Window”
         String expectedTitleAfterClick = "New Window";

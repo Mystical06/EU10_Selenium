@@ -27,6 +27,8 @@ public class T4_Config_Practice {
 
         Driver.getDriver().get("https://www.google.com");
 
+        Driver.getDriver().findElement(By.xpath("//button[@id='W0wltc']")).click();
+
         //3- Write “apple” in search box
         WebElement googleSearchBox = Driver.getDriver().findElement(By.xpath("//input[@name='q']"));
 
