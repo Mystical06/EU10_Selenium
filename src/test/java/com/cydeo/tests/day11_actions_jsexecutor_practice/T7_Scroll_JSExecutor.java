@@ -1,6 +1,8 @@
 package com.cydeo.tests.day11_actions_jsexecutor_practice;
 
 import com.cydeo.tests.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class T7_Scroll_JSExecutor {
@@ -16,6 +18,8 @@ public class T7_Scroll_JSExecutor {
 
 
         //3- Scroll down to “Cydeo” link
+        WebElement cydeoLink = Driver.getDriver().findElement(By.linkText("CYDEO"));
+        WebElement homeLink= Driver.getDriver().findElement(By.linkText("Home"));
 
 
         //4- Scroll up to “Home” link
@@ -30,6 +34,8 @@ public class T7_Scroll_JSExecutor {
 
         //5- Use below provided JS method only
         //JavaScript method to use : arguments[0].scrollIntoView(true)
+
+
 
     }
 }
