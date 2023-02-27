@@ -1,7 +1,6 @@
 package com.cydeo.tests.day3_cssSelector_xpath;
 
-import com.cydeo.tests.utilities.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
 
 public class T4_cssSelector_getText {

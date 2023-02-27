@@ -1,6 +1,6 @@
-package com.cydeo.tests.pages;
+package com.cydeo.pages;
 
-import com.cydeo.tests.utilities.*;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 

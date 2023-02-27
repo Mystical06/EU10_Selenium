@@ -1,6 +1,6 @@
 package com.cydeo.tests.day6_alerts_iframes_windows;
 
-import com.cydeo.tests.utilities.*;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.*;

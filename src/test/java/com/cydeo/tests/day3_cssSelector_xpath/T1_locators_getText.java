@@ -1,9 +1,7 @@
 package com.cydeo.tests.day3_cssSelector_xpath;
 
-import com.cydeo.tests.utilities.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T1_locators_getText {
 

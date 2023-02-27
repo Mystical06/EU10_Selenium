@@ -1,6 +1,6 @@
 package com.cydeo.tests.day4_findElements_checkboxes_radio;
 
-import com.cydeo.tests.utilities.*;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
 
 import java.util.concurrent.*;

@@ -1,7 +1,7 @@
 package com.cydeo.tests.day12_pom_design_explicit_wait;
 
-import com.cydeo.tests.pages.*;
-import com.cydeo.tests.utilities.*;
+import com.cydeo.pages.*;
+import com.cydeo.utilities.*;
 import org.testng.*;
 import org.testng.annotations.*;
 

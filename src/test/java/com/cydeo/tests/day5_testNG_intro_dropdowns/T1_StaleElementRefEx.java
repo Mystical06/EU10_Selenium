@@ -1,8 +1,7 @@
 package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
-import com.cydeo.tests.utilities.*;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.*;
 

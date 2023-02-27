@@ -1,7 +1,7 @@
 package com.cydeo.tests.day13_review_and_practices;
 
-import com.cydeo.tests.pages.*;
-import com.cydeo.tests.utilities.*;
+import com.cydeo.pages.*;
+import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
 import org.testng.*;
 import org.testng.annotations.*;
